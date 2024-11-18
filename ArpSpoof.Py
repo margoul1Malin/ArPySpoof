@@ -23,7 +23,7 @@ def get_gateway_ip():
     return str(gw.decode().strip())
 
 def get_gateway_mac():
-    gw = subprocess.check_output("arp -a | grep 192.168.1.254 | awk '{print $4}'" , shell = True)
+    gw = subprocess.check_output("arp -a | grep 192.168.1.254" + " | awk '{print $4}'" , shell = True)
     gw2 = gw.decode()
     return str(gw2)
 
